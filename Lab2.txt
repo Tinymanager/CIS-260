@@ -1,0 +1,35 @@
+//Ethan Pedrick
+//2835438
+
+import java.util.Scanner; 
+public class Lab2 { 
+ public static void main(String[] args) { 
+    Scanner input = new Scanner(System.in);
+    System.out.println("How much do you want to invest each month?");
+    Double startmoney = input.nextDouble();
+    System.out.println("What is your interest rate (percentage)?");
+    Double interest = input.nextDouble();
+    Double I = interest/100/12;
+    Double currentmoney = startmoney * (1 + I);
+    int month = 0;
+
+    for (int i=0; i<6; i++){
+        month++;
+        System.out.println("After " + month + " month, you will have " + currentmoney);
+        currentmoney = (startmoney + currentmoney) * (1+I);
+    }
+    input.close();
+ } 
+} 
+
+//Results
+How much do you want to invest each month?
+100
+What is your interest rate (percentage)?
+5
+After 1 month, you will have 100.41666666666667
+After 2 month, you will have 201.25173611111111
+After 3 month, you will have 302.50695167824074
+After 4 month, you will have 404.18406397690006
+After 5 month, you will have 506.28483091013715
+After 6 month, you will have 608.811017705596

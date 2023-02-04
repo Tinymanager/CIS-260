@@ -1,8 +1,11 @@
+package Testing;
 import java.util.Scanner;
 public class Test {
+    public int[][] field = new int[5][5];
     public static void main(String[] args) {
+        Test test = new Test();
         Scanner input = new Scanner(System.in);
-        int[][] field = new int[5][5];
+
         System.out.println("What x position would you like to start at (1-5)");
         String xpos = input.next();
         System.out.println("What y position would you like to start at (1-5)");
@@ -21,7 +24,7 @@ public class Test {
         int mm2 = 5;
         for (int i4=0; i4<mm1; i4++){
             for (int i5=0; i5<mm2; i5++){
-                field[x3][y3] = num;
+                test.field[x3][y3] = num;
                 x3+=1;
                 num+=1;
             }
@@ -30,6 +33,7 @@ public class Test {
             num = add;
             y3+=1;
         }
+        
 
         int xx = 0;
         int yy = 0;
@@ -37,8 +41,8 @@ public class Test {
         int m2 = 5;
         for (int i=0; i<m1; i++){
             for (int iii=0; iii<m2; iii++){
-                if(field[xx][yy]==pos){
-                    field[xx][yy]=99;
+                if(test.field[xx][yy]==pos){
+                    test.field[xx][yy]=99;
                 }
                 xx+=1;
             }
@@ -52,11 +56,11 @@ public class Test {
         int max = 5;
         int xmax = 4;
         for (int ii=0; ii<max; ii++){
-            System.out.print(field[x][y]);
+            System.out.print(test.field[x][y]);
             System.out.print(" ");
             for (int i=0; i<xmax; i++){
                 x+=1;
-                System.out.print(field[x][y]);
+                System.out.print(test.field[x][y]);
                 System.out.print(" ");
             }
             x=0;

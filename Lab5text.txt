@@ -1,0 +1,65 @@
+Lab 5 Ethan Pedrick
+Code:
+
+import java.util.Scanner;
+
+public class Lab5 {
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter a string");
+        String s = input.nextLine();
+        s = s.toLowerCase();
+        int length = s.length();
+        int l = length/3;
+        int leftover = length%3;
+
+
+        if (leftover == 1){
+            l = l+1;
+            s = s+"  ";
+        } else if (leftover == 2){
+            l = l+1;
+            s = s+" ";
+        }
+
+        int v=0;
+        String midval;
+        int middle = 1;
+        int x=0;
+        int y=3;
+        for (int i=0; i<l; i++){
+            midval = (s.substring(middle,middle+1));
+            if (midval .equals("a") || midval .equals("e") || midval .equals("i") || midval .equals("o") || midval .equals("u")){
+                s = s.toUpperCase();
+                System.out.println(s.substring(x,y));
+                s = s.toLowerCase();
+                middle = middle+3;
+                x=x+3;
+                y=y+3;
+                v=v+1;
+            } else {
+                System.out.println(s.substring(x,y));
+                middle = middle+3;
+                x=x+3;
+                y=y+3;
+            }   
+        }
+        System.out.println("Number of substrings with a vowel in the middle is: " + v);
+
+        input.close();
+    }
+}
+
+Test:
+Please enter a string
+HelloHow are yOu TodayY
+HEL
+LOH
+ow
+are
+ yo
+u t
+oda
+yy
+Number of substrings with a vowel in the middle is: 2

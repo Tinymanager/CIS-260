@@ -13,7 +13,7 @@ public class Lab5 {
 
 
         if (leftover == 1){
-            l = l+1;
+            l = l + 1;
             s = s+"  ";
         } else if (leftover == 2){
             l = l+1;

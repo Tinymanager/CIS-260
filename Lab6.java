@@ -9,7 +9,6 @@ public class Lab6 {
 
         while (!cond){//num
             for (i=1; i<=20; i++){//i
-                System.out.println(num + "/" + i + "" + ", rem " + num%i);
                 rem = num%i;
                 if (rem > 0){
                     break;
@@ -19,6 +18,7 @@ public class Lab6 {
                 }
             }
             if (count == 20){
+                System.out.println(num  + ", rem " + num%i);
                 cond = true;
             } else {
                 count = 0;

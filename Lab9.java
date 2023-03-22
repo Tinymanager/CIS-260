@@ -57,10 +57,7 @@ public class Lab9 {
             //use count to hold how many times the word is used, use wordscoretotal to add up all the scores
             if (line.toLowerCase().indexOf(word.toLowerCase()) != -1){
                 count = count +1;
-                System.out.println(count);
-                System.out.println(line.charAt(0));
-                wordScoreTotal = wordScoreTotal + line.charAt(0);
-                System.out.println(wordScoreTotal);
+                wordScoreTotal = wordScoreTotal + line.charAt(0)-48;
             }
          }
          

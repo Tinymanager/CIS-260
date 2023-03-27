@@ -31,15 +31,16 @@ public class MapDataDrawer
   /**
    * @return the min value in the entire grid
    */
-  public int findMin() {
+  public int findMin() {               //Iterate through the main array, then the interior array each time, checking if each number is the lowest
    int minnumber = grid[0][0];
-   for(int i=0; i<grid.length; i++){
-      for (int j=0; j<grid[i].length; j++){
-         if (grid[i][j]  < minnumber){
+   for(int i=0; i<grid.length; i++){   //Main array iteration
+      for (int j=0; j<grid[i].length; j++){     //Interior array iteration
+         if (grid[i][j]  < minnumber){    //Checks if the new number is lower
             minnumber = grid[i][j];
          }
       }
    }
+
    return minnumber;
      // Implement this method in Programming Assignment 1
     //Cycle through the entire array and keep track of the lowest value
@@ -49,15 +50,16 @@ public class MapDataDrawer
   /**
    * @return the max value in the entire grid
    */
-  public int findMax(){
+  public int findMax(){          //Iterate through the main array, then the interior array each time, checking if each number is the highest
    int maxnumber = grid[0][0];
-   for(int i=0; i<grid.length; i++){
-      for (int j=0; j<grid[i].length; j++){
-         if (grid[i][j] > maxnumber){
+   for(int i=0; i<grid.length; i++){      //Main array iteration
+      for (int j=0; j<grid[i].length; j++){     //Interior array iteration
+         if (grid[i][j] > maxnumber){     //Checks if the new number is lower
             maxnumber = grid[i][j];
          }
       }
    }
+
    return maxnumber;
      // Implement this method in Programming Assignment 1
 
@@ -67,16 +69,17 @@ public class MapDataDrawer
    * @param col the column of the grid to check
    * @return the index of the row with the lowest value in the given col for the grid
    */
-  public  int indexOfMinRow(int col){
-   int rownumber = 0;
+  public  int indexOfMinRow(int col){     //Loop through each row while checking the column value to find the index of the row with the lowest value in that column
+   int rownum = 0;
    int min = grid[0][0];
-   for (int i=0; i<grid.length; i++){
-      if (grid[i][col] < min){
+   for (int i=0; i<grid.length; i++){  //Iterate through the rows
+      if (grid[i][col] < min){      //Checks if the current row contains the lowest column number
          min = grid[i][col];
-         rownumber = i;
+         rownum = i;
       }
    }
-   return rownumber;
+
+   return rownum;
    //Implement this method in Programming Assignment 1
   
   }

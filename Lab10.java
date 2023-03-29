@@ -1,0 +1,91 @@
+import java.util.Scanner;
+import java.io.File;
+
+public class Lab10 {
+   public static void main(String[] args) {
+    System.out.println(System.getProperty("user.dir"));
+      // Create a new Scanner object to obtain 
+      // input from System.in
+      Scanner input = new Scanner(System.in);
+      
+      // Ask user for a word to search for. Print 
+      // out a prompt
+      System.out.println("Please enter the phrase you want a score for:");
+      
+      // Use the Scanner object you created above to 
+      // take a word of input from the user. 
+      String word = input.nextLine();
+      //double score = wordScore(word);
+      double wordCount = 0;
+      double reviewScores = 0;
+      double stringScore = 0;
+      double finalReviewScore = 0;
+
+      String[] array = word.split(" ");
+      for (String s : array) {
+        stringScore = wordScore(s);
+        wordCount++;
+        reviewScores = reviewScores + stringScore;
+      }
+      if (wordCount > 0){
+        finalReviewScore = reviewScores / wordCount;
+      }
+      System.out.println("The score for this review would be:");
+      System.out.println(finalReviewScore);
+   }
+
+   public static double wordScore(String word){
+    File file = new File("movieReviews.txt");
+    double WordScore = 0.0;
+    // Read from the file, and print out each line
+    try {
+       // Just like we've created a Scanner object
+       // to read from System.in, we can create one
+       // to read from any File object. 
+       Scanner fInput = new Scanner(file);
+     
+       // Variables to keep track of word scores
+        int wordScoreTotal = 0;
+        int count = 0;
+        
+       
+       // Keep looping through the file, and 
+       // process each line
+       while (fInput.hasNextLine()) {
+          // Get the next line
+          String line = fInput.nextLine();
+          
+          // For your assignment, replace the 
+          // line of code above with your code to count 
+          // the number of occurrences of the word
+          // that the user gave in the file.
+          // You will use methods such as getNumericValue
+          // in the Character class and the indexOf method 
+          // in String.  
+          int lineScore = Character.getNumericValue(line.charAt(0));
+          if (line.indexOf(word) >= 0) {
+             count++;
+             wordScoreTotal = wordScoreTotal + lineScore;
+          }    
+       }
+       
+       // Print out the number of times the input word
+       // appears in the file movieReviews.txt
+       //System.out.println("The word " + word +
+                   //" appears " + count + " times in the file");
+                   
+       // Calculate the average word score 
+       if (count > 0) {
+          WordScore = wordScoreTotal / count;
+       }
+       
+       // Print out the average word score
+       //System.out.println("The average score is " + WordScore);
+       
+    // DO NOT modify the next line   
+    } catch(Exception e) { 
+        e.printStackTrace();
+    }
+    return WordScore;
+   }
+}

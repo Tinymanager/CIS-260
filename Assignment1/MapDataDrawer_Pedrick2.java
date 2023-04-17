@@ -4,12 +4,12 @@ import java.util.*;
 import java.io.*;
 import java.awt.*;
 
-public class MapDataDrawer
+public class MapDataDrawer_Pedrick2
 {
 
   private int[][] grid;
 
-  public MapDataDrawer(String filename, int rows, int cols){
+  public MapDataDrawer_Pedrick2(String filename, int rows, int cols){
       // initialize grid 
       grid = new int[rows][cols];
       
